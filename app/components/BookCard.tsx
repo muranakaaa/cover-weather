@@ -11,7 +11,7 @@ const BookCard: React.FC<Book> = ({ title, authors, thumbnail, description }) =>
   const highResThumbnail = thumbnail.replace("&zoom=1", "&zoom=2");
 
   return (
-    <div className="border rounded p-4 flex space-x-4">
+    <div className="border rounded p-4 sm:flex space-x-4">
       <div className="w-48 h-64 relative min-w-56"> 
         <Image
           src={highResThumbnail}
