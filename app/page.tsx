@@ -1,12 +1,20 @@
-"use client"
+"use client";
 import { searchBooks } from "@/lib/googleBooks";
 import { useState } from "react";
 import BookCard from "./components/BookCard";
 import MemoSection from "./components/MemoSection";
 import SearchBar from "./components/SearchBar";
 
+type Book = {
+  title: string;
+  description: string;
+  authors: string[];
+  thumbnail: string;
+};
+
 const Page = () => {
-  const [books, setBooks] = useState([]);
+  // 型を明示してエラーを防止
+  const [books, setBooks] = useState<Book[]>([]);
 
   const handleSearch = async (query: string) => {
     const results = await searchBooks(query);
